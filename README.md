@@ -413,6 +413,7 @@ Contributions are welcome! Here's how:
 
 ---
 📄 License
+
 This project is licensed under the MIT License — see the LICENSE file for details.
 ---
 🙏 Acknowledgments
@@ -423,6 +424,7 @@ This project is licensed under the MIT License — see the LICENSE file for deta
 ---
 
 📧 Questions?
+
 Open an issue on this repository or reach out to me.
 
 ⭐ If you find this tool useful, please give it a star on GitHub!
