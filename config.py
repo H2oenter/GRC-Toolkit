@@ -9,7 +9,7 @@ import os
 # ──────────────────────────────────────────────
 # API Configuration — ANTHROPIC CLAUDE
 # ──────────────────────────────────────────────
-ANTHROPIC_API_KEY = os.getenv("ANTHROPIC_API_KEY", "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")
+ANTHROPIC_API_KEY = os.getenv("ANTHROPIC_API_KEY", "you API KEY here")
 
 # Model options:
 #   "claude-sonnet-4-20250514"   — Best balance of speed/quality/cost (recommended)
