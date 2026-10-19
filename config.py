@@ -6,10 +6,15 @@ Location: grc_toolkit/config.py
 
 import os
 
+from dotenv import load_dotenv
+
+# Load variables from a local .env file if present (see .env.example).
+load_dotenv()
+
 # ──────────────────────────────────────────────
 # API Configuration — ANTHROPIC CLAUDE
 # ──────────────────────────────────────────────
-ANTHROPIC_API_KEY = os.getenv("ANTHROPIC_API_KEY", "your API KEY here")
+ANTHROPIC_API_KEY = os.getenv("ANTHROPIC_API_KEY", "")
 
 # Model options:
 #   "claude-sonnet-4-20250514"   — Best balance of speed/quality/cost (recommended)
