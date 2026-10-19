@@ -1,0 +1,23 @@
+# Secrets
+.env
+*.key
+
+# Python
+__pycache__/
+*.py[cod]
+venv/
+.venv/
+env/
+*.egg-info/
+.pytest_cache/
+
+# Generated assessments, policies and reports (may contain client data)
+outputs/*
+!outputs/*/
+outputs/*/*
+!outputs/*/.gitkeep
+
+# Editors / OS
+.vscode/
+.idea/
+.DS_Store
