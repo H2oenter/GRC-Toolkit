@@ -6,7 +6,7 @@ A Python-based toolkit that helps GRC consultants and security professionals aut
 
 ![Python](https://img.shields.io/badge/Python-3.9+-blue.svg)
 ![License](https://img.shields.io/badge/License-MIT-green.svg)
-![OpenAI](https://img.shields.io/badge/Powered%20by-OpenAI-412991.svg)
+![Anthropic Claude](https://img.shields.io/badge/Powered%20by-Anthropic%20Claude-d97757.svg)
 
 ---
 
@@ -18,7 +18,7 @@ A Python-based toolkit that helps GRC consultants and security professionals aut
 - [Time Savings](#-time-savings)
 - [Prerequisites](#-prerequisites)
 - [Installation (Step-by-Step)](#-installation-step-by-step)
-- [Getting Your OpenAI API Key](#-getting-your-openai-api-key)
+- [Getting Your Anthropic API Key](#-getting-your-anthropic-api-key)
 - [How to Run the Tool](#-how-to-run-the-tool)
 - [Using the Web Interface](#-using-the-web-interface-recommended)
 - [Using the Command Line](#-using-the-command-line)
@@ -73,19 +73,22 @@ If you're a GRC consultant or security professional, you know these tasks take f
 
 ## 📚 Supported Frameworks
 
+Four frameworks ship with bundled control knowledge bases in `frameworks/`:
+
 - **NIST CSF 2.0** — Cybersecurity Framework
 - **ISO 27001:2022** — Information Security Management
 - **SOC 2 Type II** — Trust Services Criteria
 - **HIPAA** — Healthcare Security Rule
-- **PCI DSS 4.0** — Payment Card Industry
-- **CMMC 2.0** — Cybersecurity Maturity Model
-- **NIST 800-53 Rev 5** — Security Controls
-- **CIS Controls v8** — Center for Internet Security
-- **GDPR** — General Data Protection Regulation
+
+The following are selectable but have no bundled JSON yet; for these the tool falls back to the model's own knowledge of the framework, so review the output more carefully. Contributions of framework files are welcome (see [Contributing](#-contributing)).
+
+- PCI DSS 4.0 · CMMC 2.0 · NIST 800-53 Rev 5 · CIS Controls v8 · GDPR
 
 ---
 
 ## ⏱️ Time Savings
+
+Indicative figures from my own use of the tool, not a benchmark. The tool produces a first draft; a consultant still has to review and correct it.
 
 | Manual GRC Task | Traditional Time | With This Tool |
 |----------------|-----------------|----------------|
@@ -412,6 +415,15 @@ Contributions are welcome! Here's how:
 - Create industry-specific policy templates
 
 ---
+## 🔐 Security notes
+
+- Your API key is read from the `ANTHROPIC_API_KEY` environment variable or a local `.env` file (see `.env.example`). `.env` is ignored by Git. Never hardcode a key in `config.py`.
+- Everything you type about a company, and every document you upload for review, is sent to the Anthropic API. Do not use the tool on client data unless your engagement terms and the client allow it.
+- Generated files in `outputs/` are ignored by Git because they typically contain client details. Keep them out of version control.
+- Treat every generated policy, procedure and assessment as a draft that a qualified person reviews before it is adopted.
+
+---
+
 📄 License
 
 This project is licensed under the MIT License — see the LICENSE file for details.
